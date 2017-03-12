@@ -6,7 +6,7 @@ var require = {
     'Lut': { deps: ['three'], exports: 'Lut' },
     'detector': { exports: 'Detector' },
     'resizesensor': {exports: 'ResizeSensor'},
-    'FFBOMesh3D': { deps: ['three', 'Lut', 'TrackballControls', 'tooltip'], exports: 'FFBOMesh3D' },
+    'FFBOMesh3D': { deps: ['three', 'Lut', 'TrackballControls'], exports: 'FFBOMesh3D' },
     'd3': {exports: 'd3'},
     'mmenu': { deps: ['jquery'] },
     'graphics_explorer': { deps: ['d3'], exports: 'GraphicsExplorer' },

@@ -1,6 +1,6 @@
 
-require( ['detector', 'FFBOMesh3D', 'resizesensor', 'd3', 'tooltip', 'graphics_explorer'],
-         function ( Detector, FFBOMesh3D, ResizeSensor, d3, tooltip, GraphicsExplorer ) {
+require( ['detector', 'FFBOMesh3D', 'resizesensor', 'd3', 'graphics_explorer'],
+         function ( Detector, FFBOMesh3D, ResizeSensor, d3, GraphicsExplorer ) {
 	if ( ! Detector.webgl ) {
 		Detector.addGetWebGLMessage();
 	}
