@@ -61,6 +61,9 @@ function start_connection(authid, key){
     function onchallenge (session, method, extra) {
 	if (method === "wampcra") {
 	    salted_key = autobahn.auth_cra.derive_key(key,extra.salt, extra.iterations, extra.keylen)
+        if(key=="guestpass" && authid=="guest"){
+                salted_key = "Y/w6jYBIOLM48hEKn9zRLx9gZCYwwrFW7K/ELtWzVT8=";
+        }
 	    return autobahn.auth_cra.sign(salted_key, extra.challenge);
 	}
     }
@@ -206,4 +209,4 @@ function start_connection(authid, key){
     connection.open();
 }
 
-start_connection('user', 'password');
+start_connection('guest', 'guestpass');
