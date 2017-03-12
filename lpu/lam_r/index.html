@@ -1,0 +1,140 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>NeuroGFX</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/0.5.0/hamburgers.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/5.7.8/css/jquery.mmenu.all.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/5.7.8/extensions/positioning/jquery.mmenu.positioning.css"/>
+
+  <!-- jQuery library -->
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <!-- jQuery.mmenu library -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/5.7.8/js/jquery.mmenu.all.min.js"></script>
+  <!-- Bootstrap Library -->
+  <script type='text/javascript' src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+  <!-- FFBO Layout -->
+  <script type="text/javascript" src="https://cdn.rawgit.com/fruitflybrain/ffbo.lib/master/js/ffbo.layout.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/fruitflybrain/ffbo.lib/master/css/ffbo.layout.css">
+  <link rel="shortcut icon" href="https://cdn.rawgit.com/fruitflybrain/fruitflybrain.github.io/master/ico/favicon.ico">
+</head>
+<body>
+  <div id="wrapper">
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+      <nav class="navbar navbar-ffbo navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button id="server-icon" class="navbar-brand hamburger hamburger--vortex" onclick="openServerMenu()">
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+            </button>
+            <a class="navbar-brand" href="http://fruitflybrain.org/" target="_blank">FFBO</a>
+            <button id="ui_menu_btn" type="button" class="navbar-toggle collapsed" onclick="openRightMenu()" style="z-index:1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <ul class="nav navbar-nav ffbo-app">
+              <li class="dropdown">
+                <a class="dropdown-toggle" role="button" data-toggle="dropdown">NeuroGFX</a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a id='btn-tutorial-video' role='button'>Tutorial Video</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="navbar-fixed-bottom">
+            <ul class="nav navbar-nav">
+              <li>Copyright &copy; 2017 FFBO.</li>
+              <li id="circuit_info"><p><a href="/index.html">Whole Brain</a> &Gt; <a>Lamina</a></p></li>
+            </ul>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a role="button" onclick="onToggleCircuitClick()">Toggle Circuit</a></li>
+              <li><a role="button" onclick="onLoadClick()">Load Lamina</a></li>
+            </ul>
+          </div>
+          <nav id="ui_menu_nav">
+            <ul>
+              <li>
+                <span>Toggle Circuit</span>
+                <ul id="toggle_circuit">
+                  <li><a onclick="onAddAllClick()" role="button">Add All</a></li>
+                  <li><a onclick="onRemoveAllClick()" role="button">Remove All</a></li>
+                  <li>
+                    <span>Single Cartridge</span>
+                    <ul id="single-cart"></ul>
+                  </li>
+                </ul>
+              </li>
+              <li><a id="btn-load" onclick="onLoadClick()" role="button">Load Lamina</a></li>
+            </ul>
+          </nav>
+          <nav id="sidebar-wrapper" class="ffbo-server" role="navigation">
+            <ul>
+              <li>
+                <a>NeuroArch Servers </a>
+                <select id="na_model_servers" class="selectpicker">
+                  <option>None</option>
+                </select>
+              </li>
+              <li>
+                <a>Neurokernel Servers </a>
+                <select id="nk_servers" class="selectpicker">
+                  <option>None</option>
+                </select>
+              </li>
+              <li>
+                <button type="button" class="btn btn-xs btn-primary" id="leave-feedback">Leave Feedback</button>
+              </li>
+            </ul>
+          </nav>
+          <!-- sidebar-wrapper -->
+        </div>
+      </nav>
+
+      <div id="vis-svg" class="vis vis-lg">
+         <object id="svgLam" data="img/lamina.svg" width="90%" type="image/svg+xml"><p>SVG-Viewer needed.</p></object>
+      </div>
+
+      <div id="vis-3d" class="vis vis-sm"></div>
+
+      <div id="num-of-cartridge-container"><p id="num-of-cartridge"></p></div>
+
+      <div id="notifications"></div>
+      <div id="video-panel" class='overlay'>
+        <ul  class="list-inline">
+          <li><h2>Tutorial Video </h2></li>
+          <li><a id="btn-video-close" class='close-symbol' role="button">&#10005;</a></li>
+        </ul>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe id="video-iframe" class="embed-responsive-item" frameborder="0" allowfullscreen src="https://www.youtube.com/embed/V28QYxLMbZc">
+            </iframe>
+          </div>
+      </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+  </div>
+  <script type='text/javascript' src="https://d3js.org/d3.v3.min.js"></script>
+  <script type='text/javascript' src="https://cdn.rawgit.com/mrdoob/three.js/dev/examples/js/Detector.js"></script>
+  <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/three.js/78/three.js"></script>
+  <script type='text/javascript' src="https://cdn.rawgit.com/mrdoob/three.js/dev/examples/js/math/Lut.js"></script>
+  <script type="text/javascript" src="../../js/TrackballControls.js"></script>
+  <script type="text/javascript" src="https://cdn.rawgit.com/marcj/css-element-queries/master/src/ResizeSensor.js"></script>
+
+  <script type='text/javascript' src="js/mesh3d-lamina.js"></script>
+  <script type="text/javascript" src="js/lamina_configure.js"></script>
+  <script type="text/javascript" src="js/lamina.js"></script>
+
+</body>
+</html>
