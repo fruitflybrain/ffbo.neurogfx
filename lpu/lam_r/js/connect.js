@@ -16,7 +16,7 @@ var connection;
 var login_succ = false;
 
 function populate_server_lists(directory){
-    var valid_server_type = ['na_model', 'nk'];
+    var valid_server_type = ['na', 'nk'];
     for (var type in directory){
         if (valid_server_type.indexOf(type) > -1) {
             select = document.getElementById(type+'_servers');
