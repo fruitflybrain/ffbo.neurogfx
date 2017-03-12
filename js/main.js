@@ -25,6 +25,8 @@ require( ['detector', 'FFBOMesh3D', 'resizesensor', 'd3', 'graphics_explorer'],
        for (var x in data) {
            if (data[x]['filename'].split('.').pop() == 'json')
                data[x]['filename'] = 'https://cdn.rawgit.com/fruitflybrain/ffbo.lib/master' + data[x]['filename'].substring(3)
+           else
+              delete data[x];
        }
 			 ffboMesh = new FFBOMesh3D(
 				 'vis-3d',
