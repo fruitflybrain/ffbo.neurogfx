@@ -412,8 +412,7 @@ function create_duplicate_state(server, session, query){
         if("success" in res){
             process_na_result_in_nx_format(res);
             cartridge_data_set = true;
-            $("#num-of-cartridge").text("Cartridge #" + cartridge_num + ", Number of Neurons: "+getNeuronCount\
-())
+            $("#num-of-cartridge").text("Cartridge #" + cartridge_num + ", Number of Neurons: "+getNeuronCount())
             Notify("Cartridge info loaded.")
         }
     },
