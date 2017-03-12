@@ -118,7 +118,7 @@ function start_nk_execution(session, activeObj) {
     console.log("send neuroarch function triggered");
 
     try {
-	var server = document.getElementById("na_model_servers").options[na_model_servers.selectedIndex].value;
+	var server = document.getElementById("na_servers").options[na_servers.selectedIndex].value;
     } catch (err) {
 	console.log("na server not valid");
     Notify("Cannot connect to any NeuroArch Server.", null, null,null,'danger')
@@ -207,7 +207,7 @@ function send_nk_execute(session, output_neuron_list) {
     }
     
     try {
-	var na_server = document.getElementById("na_model_servers").options[na_model_servers.selectedIndex].value;
+	var na_server = document.getElementById("na_servers").options[na_servers.selectedIndex].value;
     } catch (err) {
 	console.log("na server not valid");
     Notify("Cannot connect to any NeuroArch Server.", null,null,null,'danger')
@@ -217,7 +217,7 @@ function send_nk_execute(session, output_neuron_list) {
     msg = {}
     msg['user'] = session.id;
     msg['servers'] = {};
-    msg['servers']['na_model'] = na_server;
+    msg['servers']['na'] = na_server;
     msg['servers']['nk'] = server;
     // neurokernel component expects that the query["neuron_list"] contains
     // a list of neurons of which the responses are returned
@@ -270,7 +270,7 @@ function construct_cartridge(session, cartridge_index) {
     console.log("send neuroarch function triggered");
 
     try {
-        var server = document.getElementById("na_model_servers").options[na_model_servers.selectedIndex].value;
+        var server = document.getElementById("na_servers").options[na_servers.selectedIndex].value;
     } catch (err) {
         console.log("na server not valid");
         Notify("Cannot connect to any NeuroArch Server.", null,null,null,'danger')

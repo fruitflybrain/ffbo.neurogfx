@@ -145,7 +145,7 @@ function start_nk_execution(session, activeObj) {
     console.log("send neuroarch function triggered");
 
     try {
-	var server = document.getElementById("na_model_servers").options[na_model_servers.selectedIndex].value;
+	var server = document.getElementById("na_servers").options[na_servers.selectedIndex].value;
     } catch (err) {
 	console.log("na server not valid");
     Notify("Cannot connect to any NeuroArch Server.", null, null,null,'danger')
@@ -234,7 +234,7 @@ function send_nk_execute(session, output_neuron_list) {
     }
     
     try {
-	var na_server = document.getElementById("na_model_servers").options[na_model_servers.selectedIndex].value;
+	var na_server = document.getElementById("na_servers").options[na_servers.selectedIndex].value;
     } catch (err) {
 	console.log("na server not valid");
     Notify("Cannot connect to any NeuroArch Server.", null,null,null,'danger')
@@ -244,7 +244,7 @@ function send_nk_execute(session, output_neuron_list) {
     msg = {}
     msg['user'] = session.id;
     msg['servers'] = {};
-    msg['servers']['na_model'] = na_server;
+    msg['servers']['na'] = na_server;
     msg['servers']['nk'] = server;
     // neurokernel component expects that the query["neuron_list"] contains
     // a list of neurons of which the responses are returned
@@ -297,7 +297,7 @@ function construct_cartridge(session, cartridge_index) {
     console.log("send neuroarch function triggered");
 
     try {
-        var server = document.getElementById("na_model_servers").options[na_model_servers.selectedIndex].value;
+        var server = document.getElementById("na_servers").options[na_servers.selectedIndex].value;
     } catch (err) {
         console.log("na server not valid");
         Notify("Cannot connect to any NeuroArch Server.", null,null,null,'danger')
@@ -375,32 +375,39 @@ function construct_cartridge(session, cartridge_index) {
     '"format":"no_result"}',
     '{"query":[{"action":{"method":{"has":{}}},"object":{"state":0}}],"format":"nx"}']
     
-    //send out the first N-1 queries
-    for (i = 0; i < list_of_query.length-1; i++)
-    {
-        query = JSON.parse(list_of_query[i])
+    //send out the first N-1 queries                                                                           
+    //for (i = 0; i < list_of_query.length-1; i++)                                                             
+    //{                                                                                                        
+        query = JSON.parse(list_of_query[0])
         query["server"] = server
         query["user"] = session.id
         console.log(query)
         session.call('ffbo.processor.neuroarch_query', [query]).then(
         function(res) {
             console.log("na_query result:", res);
+            create_duplicate_state(server, session, list_of_query[1])
         },
         function(err) {
             console.log("na_query error:", err);
         });
-    }
-    
-    // send out the last query,
-    // we make sure that the second to last query is the entire cartridge
-    // that we will always start with when having a new configuration
-    query = JSON.parse(list_of_query[list_of_query.length-1])
+    //}                                                                                                        
+
+    // send out the last query,                                                                                
+    // we make sure that the second to last query is the entire cartridge                                      
+    // that we will always start with when having a new configuration                                          
+
+    Notify("Request to load cartridge sent.")
+
+};
+
+function create_duplicate_state(server, session, query){
+    query = JSON.parse(query)
     query["server"] = server
     query["user"] = session.id
     console.log(query)
     session.call('ffbo.processor.neuroarch_query', [query]).then(
     function(res) {
-        // cartridge info loaded, update frontend
+        // cartridge info loaded, update frontend                                                              
         console.log("na_query result:", res);
         if("success" in res){
             process_na_result_in_nx_format(res);
@@ -413,10 +420,7 @@ function construct_cartridge(session, cartridge_index) {
         console.log("na_query error:", err);
         Notify("Failed to load cartridge info.", null,null,null,'danger')
     });
-    
-    Notify("Request to load cartridge sent.")
-    
-};
+}
 
 
 // process query result for a cartridge
