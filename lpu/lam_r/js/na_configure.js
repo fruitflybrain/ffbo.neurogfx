@@ -80,13 +80,8 @@ function run_visualization(res) {
     nkpanel.updateOutput(outputs, ffboMesh.setAnim.bind(ffboMesh));
 
 }
-var list_of_queries = [];
-var server;
-var session;
-var activeObj_to_label = [];
-    
-function start_nk_execution(client_session, activeObj) {
-    session = client_session;
+
+function start_nk_execution(session, activeObj) {
     var nodes = cartridge_graph["nodes"];
     var edges = cartridge_graph["edges"];
     
@@ -98,7 +93,7 @@ function start_nk_execution(client_session, activeObj) {
     // synapse nodes that has attribute via a?
     var removed_via = [];
     // activate objects that will need to be recorded
-    activeObj_to_label = [];
+    var activeObj_to_label = [];
     
     
     
@@ -150,10 +145,10 @@ function start_nk_execution(client_session, activeObj) {
     console.log("send neuroarch function triggered");
 
     try {
-	server = document.getElementById("na_servers").options[na_servers.selectedIndex].value;
+	var server = document.getElementById("na_servers").options[na_servers.selectedIndex].value;
     } catch (err) {
 	console.log("na server not valid");
-    Notify("Cannot connect to any NeuroArch Server.", null, null,'danger')
+    Notify("Cannot connect to any NeuroArch Server.", null, null,null,'danger')
 	return;
     }
     
@@ -176,7 +171,7 @@ function start_nk_execution(client_session, activeObj) {
 //        ]
     
     
-    list_of_queries = [
+    list_of_query = [
         '{"command":{"swap":{"states":[0,1]}},"format":"no_result"}',
         '{"query":[{"action":{"method":{"has":{"name":['+removed_neurons+']}}},"object":{"state":0}},{"action":{"method":{"has":{"label":['+removed_labels+']}}},"object":{"state":0}},{"action":{"op":{"__add__":{"memory":1}}},"object":{"memory":0}},' +
         '{"action":{"method":{"get_connected_ports":{}}},"object":{"memory":0}},' +
@@ -189,50 +184,52 @@ function start_nk_execution(client_session, activeObj) {
         '{"action":{"op":{"__sub__":{"memory":0}}},"object":{"state":0}}],"format":"nx"}'
     ]
     
-
-    process_queries();
+    for (i = 0; i < list_of_query.length-1; i++)
+    {
+        query = JSON.parse(list_of_query[i])
+        query["server"] = server
+        query["user"] = session.id
+        console.log(query)
+        session.call('ffbo.processor.neuroarch_query', [query]).then(
+        function(res) {
+            console.log("na_query result:", res);
+        },
+        function(err) {
+            console.log("na_query error:", err);
+        });
+    }
+    
+    query = JSON.parse(list_of_query[list_of_query.length-1])
+    query["server"] = server
+    query["user"] = session.id
+    console.log(query)
+    session.call('ffbo.processor.neuroarch_query', [query]).then(
+    function(res) {
+        console.log("na_query result:", res);
+        Notify("Cartridge circuit updated in NeuroArch workspace.")
+        send_nk_execute(session, activeObj_to_label);
+    },
+    function(err) {
+        console.log("na_query error:", err);
+    });
+    
     Notify("Request to update cartridge circuit sent.")
     
     
 };
 
-function process_queries(){
-    if(list_of_queries.length == 0){
-	return;
-    }
-    query = JSON.parse(list_of_queries.splice(0,1))
-    query["server"] = server
-    query["user"] = session.id
-    console.log(query)
-    session.call('ffbo.processor.neuroarch_query', [query]).then(
-        function(res) {
-	    console.log("na_query result:", res);
-	    console.log(list_of_queries);
-	    if(list_of_queries.length>0){
-		process_queries()
-	    }
-	    else{
-		Notify("Cartridge circuit updated in NeuroArch workspace.")
-		send_nk_execute(session, activeObj_to_label);
-	    }
-        },
-        function(err) {
-            console.log("na_query error:", err);
-        });
 
-}
 // send to neurokernel for execution.
 // output_neuron_list is a list of neurons that we request neurokernel
 // to return their responses
-function send_nk_execute(client_session, output_neuron_list) {
-    session = client_session;
+function send_nk_execute(session, output_neuron_list) {
     console.log("send function triggered");
 
     try {
-	server = document.getElementById("nk_servers").options[nk_servers.selectedIndex].value;
+	var server = document.getElementById("nk_servers").options[nk_servers.selectedIndex].value;
     } catch (err) {
 	console.log("nk server not valid");
-    Notify("Cannot connect to any NeuroKernel Server.", null,null,'danger')
+    Notify("Cannot connect to any NeuroKernel Server.", null,null,null,'danger')
 	return;
     }
     
@@ -240,7 +237,7 @@ function send_nk_execute(client_session, output_neuron_list) {
 	var na_server = document.getElementById("na_servers").options[na_servers.selectedIndex].value;
     } catch (err) {
 	console.log("na server not valid");
-    Notify("Cannot connect to any NeuroArch Server.", null,null,'danger')
+    Notify("Cannot connect to any NeuroArch Server.", null,null,null,'danger')
 	return;
     }
 
@@ -267,7 +264,7 @@ function send_nk_execute(client_session, output_neuron_list) {
         clearInterval(ex_notification);
 //        Notify("Circuit execution completed.")
         if ('error' in res) {
-            Notify(res['error']['message'],null,null,'danger')
+            Notify(res['error']['message'],null,null,null,'danger')
         } else if('success' in res) {
             Notify('Execution Complete. Result Visualised.');
         };
@@ -275,7 +272,7 @@ function send_nk_execute(client_session, output_neuron_list) {
 	function(err) {
 	    console.log("nk_query error:", err);
         //Notify("Error: Failed to start circuit execution in Neurokernel.", null,null,null,'danger')
-        Notify(err,null,null,'danger');
+        Notify(err,null,null,null,'danger');
         clearInterval(ex_notification);
 	},
     function(progress) {
@@ -296,15 +293,14 @@ function notify_execution() {
 }
 
 
-function construct_cartridge(client_session, cartridge_index) {
-    session = client_session
+function construct_cartridge(session, cartridge_index) {
     console.log("send neuroarch function triggered");
 
     try {
-        server = document.getElementById("na_servers").options[na_servers.selectedIndex].value;
+        var server = document.getElementById("na_servers").options[na_servers.selectedIndex].value;
     } catch (err) {
         console.log("na server not valid");
-        Notify("Cannot connect to any NeuroArch Server.", null,null,'danger')
+        Notify("Cannot connect to any NeuroArch Server.", null,null,null,'danger')
 	return;
     }
     
@@ -379,9 +375,9 @@ function construct_cartridge(client_session, cartridge_index) {
     '"format":"no_result"}',
     '{"query":[{"action":{"method":{"has":{}}},"object":{"state":0}}],"format":"nx"}']
     
-    //send out the first N-1 queries
-    //for (i = 0; i < list_of_query.length-1; i++)
-    //{
+    //send out the first N-1 queries                                                                           
+    //for (i = 0; i < list_of_query.length-1; i++)                                                             
+    //{                                                                                                        
         query = JSON.parse(list_of_query[0])
         query["server"] = server
         query["user"] = session.id
@@ -389,29 +385,29 @@ function construct_cartridge(client_session, cartridge_index) {
         session.call('ffbo.processor.neuroarch_query', [query]).then(
         function(res) {
             console.log("na_query result:", res);
-	    create_duplicate_state(list_of_query[1])
+            create_duplicate_state(server, session, list_of_query[1])
         },
         function(err) {
             console.log("na_query error:", err);
         });
-    //}
-    
-    // send out the last query,
-    // we make sure that the second to last query is the entire cartridge
-    // that we will always start with when having a new configuration
-    
+    //}                                                                                                        
+
+    // send out the last query,                                                                                
+    // we make sure that the second to last query is the entire cartridge                                      
+    // that we will always start with when having a new configuration                                          
+
     Notify("Request to load cartridge sent.")
-    
+
 };
 
-function create_duplicate_state(query){
+function create_duplicate_state(server, session, query){
     query = JSON.parse(query)
     query["server"] = server
     query["user"] = session.id
     console.log(query)
     session.call('ffbo.processor.neuroarch_query', [query]).then(
     function(res) {
-        // cartridge info loaded, update frontend
+        // cartridge info loaded, update frontend                                                              
         console.log("na_query result:", res);
         if("success" in res){
             process_na_result_in_nx_format(res);
@@ -422,9 +418,10 @@ function create_duplicate_state(query){
     },
     function(err) {
         console.log("na_query error:", err);
-        Notify("Failed to load cartridge info.", null,null,'danger')
+        Notify("Failed to load cartridge info.", null,null,null,'danger')
     });
 }
+
 
 // process query result for a cartridge
 function process_na_result_in_nx_format(res) {
