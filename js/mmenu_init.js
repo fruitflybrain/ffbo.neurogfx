@@ -25,7 +25,7 @@ onTutorialVideoClick = function() {
 }
 
 onCloseTutorialVideoClick = function() {
-    $("#video-iframe")[0].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+    document.getElementById('video-iframe').contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
     $("#video-panel").slideUp(500);
     console.log('click');
 }

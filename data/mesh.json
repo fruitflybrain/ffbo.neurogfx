@@ -1,0 +1,979 @@
+{
+  "al_r": {
+    "filename": "lib/mesh/al_r.json",
+    "label": "Right AL"
+  },
+  "al_l": {
+    "filename": "lib/mesh/al_l.json",
+    "label": "Left AL"
+  },
+  "ammc_r": {
+    "filename": "lib/mesh/ammc_r.json",
+    "label": "Right AMMC"
+  },
+  "ammc_l": {
+    "filename": "lib/mesh/ammc_l.json",
+    "label": "Left AMMC"
+  },
+  "ccp_r": {
+    "filename": "lib/mesh/ccp_r.json",
+    "label": "Right CCP"
+  },
+  "ccp_l": {
+    "filename": "lib/mesh/ccp_l.json",
+    "label": "Left CCP"
+  },
+  "cmp_r": {
+    "filename": "lib/mesh/cmp_r.json",
+    "label": "Right CMP"
+  },
+  "cmp_l": {
+    "filename": "lib/mesh/cmp_l.json",
+    "label": "Left CMP"
+  },
+  "cvlp_r": {
+    "filename": "lib/mesh/cvlp_r.json",
+    "label": "Right CVLP"
+  },
+  "cvlp_l": {
+    "filename": "lib/mesh/cvlp_l.json",
+    "label": "Left CVLP"
+  },
+  "dlp_r": {
+    "filename": "lib/mesh/dlp_r.json",
+    "label": "Right DLP"
+  },
+  "dlp_l": {
+    "filename": "lib/mesh/dlp_l.json",
+    "label": "Left DLP"
+  },
+  "dmp_r": {
+    "filename": "lib/mesh/dmp_r.json",
+    "label": "Right DMP"
+  },
+  "dmp_l": {
+    "filename": "lib/mesh/dmp_l.json",
+    "label": "Left DMP"
+  },
+  "eb": {
+    "filename": "lib/mesh/eb.json",
+    "label": "EB"
+  },
+  "fspp_r": {
+    "filename": "lib/mesh/fspp_r.json",
+    "label": "Right FSPP"
+  },
+  "fspp_l": {
+    "filename": "lib/mesh/fspp_l.json",
+    "label": "Left FSPP"
+  },
+  "idfp_r": {
+    "filename": "lib/mesh/idfp_r.json",
+    "label": "Right IDFP"
+  },
+  "idfp_l": {
+    "filename": "lib/mesh/idfp_l.json",
+    "label": "Left IDFP"
+  },
+  "idlp_r": {
+    "filename": "lib/mesh/idlp_r.json",
+    "label": "Right IDLP"
+  },
+  "idlp_l": {
+    "filename": "lib/mesh/idlp_l.json",
+    "label": "Left IDLP"
+  },
+  "lat_r": {
+    "filename": "lib/mesh/lat_r.json",
+    "label": "Right LAT"
+  },
+  "lat_l": {
+    "filename": "lib/mesh/lat_l.json",
+    "label": "Left LAT"
+  },
+  "lh_r": {
+    "filename": "lib/mesh/lh_r.json",
+    "label": "Right LH"
+  },
+  "lh_l": {
+    "filename": "lib/mesh/lh_l.json",
+    "label": "Left LH"
+  },
+  "lob_r": {
+    "filename": "lib/mesh/lob_r.json",
+    "label": "Right LOB"
+  },
+  "lob_l": {
+    "filename": "lib/mesh/lob_l.json",
+    "label": "Left LOB"
+  },
+  "lop_r": {
+    "filename": "lib/mesh/lop_r.json",
+    "label": "Right LOP"
+  },
+  "lop_l": {
+    "filename": "lib/mesh/lop_l.json",
+    "label": "Left LOP"
+  },
+  "mb_r": {
+    "filename": "lib/mesh/mb_r.json",
+    "label": "Right MB"
+  },
+  "mb_l": {
+    "filename": "lib/mesh/mb_l.json",
+    "label": "Left MB"
+  },
+  "med_r": {
+    "filename": "lib/mesh/med_r.json",
+    "label": "Right MED"
+  },
+  "med_l": {
+    "filename": "lib/mesh/med_l.json",
+    "label": "Left MED"
+  },
+  "nod_r": {
+    "filename": "lib/mesh/nod_r.json",
+    "label": "Right NOD"
+  },
+  "nod_l": {
+    "filename": "lib/mesh/nod_l.json",
+    "label": "Left NOD"
+  },
+  "og_r": {
+    "filename": "lib/mesh/og_r.json",
+    "label": "Right OG"
+  },
+  "og_l": {
+    "filename": "lib/mesh/og_l.json",
+    "label": "Left OG"
+  },
+  "optu_r": {
+    "filename": "lib/mesh/optu_r.json",
+    "label": "Right OPTU"
+  },
+  "optu_l": {
+    "filename": "lib/mesh/optu_l.json",
+    "label": "Left OPTU"
+  },
+  "pan_r": {
+    "filename": "lib/mesh/pan_r.json",
+    "label": "Right PAN"
+  },
+  "pan_l": {
+    "filename": "lib/mesh/pan_l.json",
+    "label": "Left PAN"
+  },
+  "pb": {
+    "filename": "lib/mesh/pb.json",
+    "label": "PB"
+  },
+  "sdfp_r": {
+    "filename": "lib/mesh/sdfp_r.json",
+    "label": "Right SDFP"
+  },
+  "sdfp_l": {
+    "filename": "lib/mesh/sdfp_l.json",
+    "label": "Left SDFP"
+  },
+  "sog_r": {
+    "filename": "lib/mesh/sog_r.json",
+    "label": "Right SOG"
+  },
+  "sog_l": {
+    "filename": "lib/mesh/sog_l.json",
+    "label": "Left SOG"
+  },
+  "spp_r": {
+    "filename": "lib/mesh/spp_r.json",
+    "label": "Right SPP"
+  },
+  "spp_l": {
+    "filename": "lib/mesh/spp_l.json",
+    "label": "Left SPP"
+  },
+  "fb": {
+    "filename": "lib/mesh/fb.json",
+    "label": "FB"
+  },
+  "vlp_r": {
+    "filename": "lib/mesh/vlp_r.json",
+    "label": "Right VLP"
+  },
+  "vlp_l": {
+    "filename": "lib/mesh/vlp_l.json",
+    "label": "Left VLP"
+  },
+  "vmp_r": {
+    "filename": "lib/mesh/vmp_r.json",
+    "label": "Right VMP"
+  },
+  "vmp_l": {
+    "filename": "lib/mesh/vmp_l.json",
+    "label": "Left VMP"
+  },
+  "vmp_r_and_ccp_l": {
+    "filename": "lpu/tracts_undirected/vmp_r_and_ccp_l.swc",
+    "label": "Left CCP and Left CCP",
+    "background": true
+  },
+  "vmp_l_and_ccp_r": {
+    "filename": "lpu/tracts_undirected/vmp_l_and_ccp_r.swc",
+    "label": "Right CCP and Right CCP",
+    "background": true
+  },
+  "cvlp_r_and_ccp_l": {
+    "filename": "lpu/tracts_undirected/cvlp_r_and_ccp_l.swc",
+    "label": "Left CCP and Left CCP",
+    "background": true
+  },
+  "cvlp_l_and_ccp_r": {
+    "filename": "lpu/tracts_undirected/cvlp_l_and_ccp_r.swc",
+    "label": "Right CCP and Right CCP",
+    "background": true
+  },
+  "vmp_r_and_dmp_l": {
+    "filename": "lpu/tracts_undirected/vmp_r_and_dmp_l.swc",
+    "label": "Right VMP and Right VMP",
+    "background": true
+  },
+  "vmp_l_and_dmp_r": {
+    "filename": "lpu/tracts_undirected/vmp_l_and_dmp_r.swc",
+    "label": "Left VMP and Left VMP",
+    "background": true
+  },
+  "lop_r_and_cvlp_r": {
+    "filename": "lpu/tracts_undirected/lop_r_and_cvlp_r.swc",
+    "label": "Right CVLP and Right CVLP",
+    "background": true
+  },
+  "vmp_r_and_cvlp_r": {
+    "filename": "lpu/tracts_undirected/vmp_r_and_cvlp_r.swc",
+    "label": "Right VMP and Right VMP",
+    "background": true
+  },
+  "vmp_r_and_dmp_r": {
+    "filename": "lpu/tracts_undirected/vmp_r_and_dmp_r.swc",
+    "label": "Right DMP and Right DMP",
+    "background": true
+  },
+  "fb_and_idfp_r": {
+    "filename": "lpu/tracts_undirected/fb_and_idfp_r.swc",
+    "label": "FB and FB",
+    "background": true
+  },
+  "mb_l_and_mb_r": {
+    "filename": "lpu/tracts_undirected/mb_l_and_mb_r.swc",
+    "label": "Right MB and Right MB",
+    "background": true
+  },
+  "sdfp_r_and_eb": {
+    "filename": "lpu/tracts_undirected/sdfp_r_and_eb.swc",
+    "label": "EB and EB",
+    "background": true
+  },
+  "med_r_and_lob_r": {
+    "filename": "lpu/tracts_undirected/med_r_and_lob_r.swc",
+    "label": "Right MED and Right MED",
+    "background": true
+  },
+  "med_r_and_lop_r": {
+    "filename": "lpu/tracts_undirected/med_r_and_lop_r.swc",
+    "label": "Right LOP and Right LOP",
+    "background": true
+  },
+  "lop_r_and_lob_r": {
+    "filename": "lpu/tracts_undirected/lop_r_and_lob_r.swc",
+    "label": "Right LOP and Right LOP",
+    "background": true
+  },
+  "vlp_r_and_og_r": {
+    "filename": "lpu/tracts_undirected/vlp_r_and_og_r.swc",
+    "label": "Right VLP and Right VLP",
+    "background": true
+  },
+  "vlp_r_and_lob_r": {
+    "filename": "lpu/tracts_undirected/vlp_r_and_lob_r.swc",
+    "label": "Right VLP and Right VLP",
+    "background": true
+  },
+  "vlp_r_and_optu_r": {
+    "filename": "lpu/tracts_undirected/vlp_r_and_optu_r.swc",
+    "label": "Right OPTU and Right OPTU",
+    "background": true
+  },
+  "vlp_r_and_dmp_r": {
+    "filename": "lpu/tracts_undirected/vlp_r_and_dmp_r.swc",
+    "label": "Right DMP and Right DMP",
+    "background": true
+  },
+  "vlp_r_and_sdfp_r": {
+    "filename": "lpu/tracts_undirected/vlp_r_and_sdfp_r.swc",
+    "label": "Right SDFP and Right SDFP",
+    "background": true
+  },
+  "vlp_r_and_cvlp_r": {
+    "filename": "lpu/tracts_undirected/vlp_r_and_cvlp_r.swc",
+    "label": "Right VLP and Right VLP",
+    "background": true
+  },
+  "vlp_r_and_spp_r": {
+    "filename": "lpu/tracts_undirected/vlp_r_and_spp_r.swc",
+    "label": "Right SPP and Right SPP",
+    "background": true
+  },
+  "vlp_r_and_dlp_r": {
+    "filename": "lpu/tracts_undirected/vlp_r_and_dlp_r.swc",
+    "label": "Right DLP and Right DLP",
+    "background": true
+  },
+  "lob_r_and_dmp_r": {
+    "filename": "lpu/tracts_undirected/lob_r_and_dmp_r.swc",
+    "label": "Right DMP and Right DMP",
+    "background": true
+  },
+  "optu_r_and_dmp_r": {
+    "filename": "lpu/tracts_undirected/optu_r_and_dmp_r.swc",
+    "label": "Right DMP and Right DMP",
+    "background": true
+  },
+  "dmp_r_and_cvlp_r": {
+    "filename": "lpu/tracts_undirected/dmp_r_and_cvlp_r.swc",
+    "label": "Right DMP and Right DMP",
+    "background": true
+  },
+  "lh_r_and_dlp_r": {
+    "filename": "lpu/tracts_undirected/lh_r_and_dlp_r.swc",
+    "label": "Right DLP and Right DLP",
+    "background": true
+  },
+  "fb_and_cvlp_r": {
+    "filename": "lpu/tracts_undirected/fb_and_cvlp_r.swc",
+    "label": "Right CVLP and Right CVLP",
+    "background": true
+  },
+  "fb_and_pb": {
+    "filename": "lpu/tracts_undirected/fb_and_pb.swc",
+    "label": "FB and FB",
+    "background": true
+  },
+  "vmp_r_and_vlp_r": {
+    "filename": "lpu/tracts_undirected/vmp_r_and_vlp_r.swc",
+    "label": "Right VMP and Right VMP",
+    "background": true
+  },
+  "spp_r_and_dmp_r": {
+    "filename": "lpu/tracts_undirected/spp_r_and_dmp_r.swc",
+    "label": "Right DMP and Right DMP",
+    "background": true
+  },
+  "vmp_r_and_spp_r": {
+    "filename": "lpu/tracts_undirected/vmp_r_and_spp_r.swc",
+    "label": "Right VMP and Right VMP",
+    "background": true
+  },
+  "dmp_r_and_cmp_r": {
+    "filename": "lpu/tracts_undirected/dmp_r_and_cmp_r.swc",
+    "label": "Right DMP and Right DMP",
+    "background": true
+  },
+  "vlp_r_and_lh_r": {
+    "filename": "lpu/tracts_undirected/vlp_r_and_lh_r.swc",
+    "label": "Right VLP and Right VLP",
+    "background": true
+  },
+  "pan_r_and_dmp_r": {
+    "filename": "lpu/tracts_undirected/pan_r_and_dmp_r.swc",
+    "label": "Right DMP and Right DMP",
+    "background": true
+  },
+  "spp_r_and_pan_r": {
+    "filename": "lpu/tracts_undirected/spp_r_and_pan_r.swc",
+    "label": "Right SPP and Right SPP",
+    "background": true
+  },
+  "spp_r_and_dlp_r": {
+    "filename": "lpu/tracts_undirected/spp_r_and_dlp_r.swc",
+    "label": "Right DLP and Right DLP",
+    "background": true
+  },
+  "sdfp_r_and_dlp_r": {
+    "filename": "lpu/tracts_undirected/sdfp_r_and_dlp_r.swc",
+    "label": "Right SDFP and Right SDFP",
+    "background": true
+  },
+  "spp_r_and_sdfp_r": {
+    "filename": "lpu/tracts_undirected/spp_r_and_sdfp_r.swc",
+    "label": "Right SDFP and Right SDFP",
+    "background": true
+  },
+  "dmp_r_and_ccp_r": {
+    "filename": "lpu/tracts_undirected/dmp_r_and_ccp_r.swc",
+    "label": "Right CCP and Right CCP",
+    "background": true
+  },
+  "fb_and_dmp_r": {
+    "filename": "lpu/tracts_undirected/fb_and_dmp_r.swc",
+    "label": "FB and FB",
+    "background": true
+  },
+  "pb_and_ccp_r": {
+    "filename": "lpu/tracts_undirected/pb_and_ccp_r.swc",
+    "label": "Right CCP and Right CCP",
+    "background": true
+  },
+  "fb_and_eb": {
+    "filename": "lpu/tracts_undirected/fb_and_eb.swc",
+    "label": "EB and EB",
+    "background": true
+  },
+  "idfp_r_and_eb": {
+    "filename": "lpu/tracts_undirected/idfp_r_and_eb.swc",
+    "label": "Right IDFP and Right IDFP",
+    "background": true
+  },
+  "pb_and_idfp_r": {
+    "filename": "lpu/tracts_undirected/pb_and_idfp_r.swc",
+    "label": "Right IDFP and Right IDFP",
+    "background": true
+  },
+  "fb_and_sdfp_r": {
+    "filename": "lpu/tracts_undirected/fb_and_sdfp_r.swc",
+    "label": "FB and FB",
+    "background": true
+  },
+  "sdfp_r_and_optu_r": {
+    "filename": "lpu/tracts_undirected/sdfp_r_and_optu_r.swc",
+    "label": "Right SDFP and Right SDFP",
+    "background": true
+  },
+  "vmp_r_and_ccp_r": {
+    "filename": "lpu/tracts_undirected/vmp_r_and_ccp_r.swc",
+    "label": "Right CCP and Right CCP",
+    "background": true
+  },
+  "sog_r_and_sdfp_r": {
+    "filename": "lpu/tracts_undirected/sog_r_and_sdfp_r.swc",
+    "label": "Right SDFP and Right SDFP",
+    "background": true
+  },
+  "sog_r_and_dmp_r": {
+    "filename": "lpu/tracts_undirected/sog_r_and_dmp_r.swc",
+    "label": "Right SOG and Right SOG",
+    "background": true
+  },
+  "sdfp_r_and_mb_r": {
+    "filename": "lpu/tracts_undirected/sdfp_r_and_mb_r.swc",
+    "label": "Right MB and Right MB",
+    "background": true
+  },
+  "sdfp_r_and_dmp_r": {
+    "filename": "lpu/tracts_undirected/sdfp_r_and_dmp_r.swc",
+    "label": "Right SDFP and Right SDFP",
+    "background": true
+  },
+  "vlp_r_and_sog_r": {
+    "filename": "lpu/tracts_undirected/vlp_r_and_sog_r.swc",
+    "label": "Right SOG and Right SOG",
+    "background": true
+  },
+  "sdfp_r_and_lh_r": {
+    "filename": "lpu/tracts_undirected/sdfp_r_and_lh_r.swc",
+    "label": "Right SDFP and Right SDFP",
+    "background": true
+  },
+  "mb_r_and_idfp_r": {
+    "filename": "lpu/tracts_undirected/mb_r_and_idfp_r.swc",
+    "label": "Right IDFP and Right IDFP",
+    "background": true
+  },
+  "mb_r_and_eb": {
+    "filename": "lpu/tracts_undirected/mb_r_and_eb.swc",
+    "label": "Right MB and Right MB",
+    "background": true
+  },
+  "pb_and_dmp_r": {
+    "filename": "lpu/tracts_undirected/pb_and_dmp_r.swc",
+    "label": "PB and PB",
+    "background": true
+  },
+  "lh_r_and_dmp_r": {
+    "filename": "lpu/tracts_undirected/lh_r_and_dmp_r.swc",
+    "label": "Right DMP and Right DMP",
+    "background": true
+  },
+  "vmp_r_and_lh_r": {
+    "filename": "lpu/tracts_undirected/vmp_r_and_lh_r.swc",
+    "label": "Right VMP and Right VMP",
+    "background": true
+  },
+  "sog_r_and_lh_r": {
+    "filename": "lpu/tracts_undirected/sog_r_and_lh_r.swc",
+    "label": "Right SOG and Right SOG",
+    "background": true
+  },
+  "pan_r_and_lh_r": {
+    "filename": "lpu/tracts_undirected/pan_r_and_lh_r.swc",
+    "label": "Right LH and Right LH",
+    "background": true
+  },
+  "vmp_r_and_idfp_r": {
+    "filename": "lpu/tracts_undirected/vmp_r_and_idfp_r.swc",
+    "label": "Right IDFP and Right IDFP",
+    "background": true
+  },
+  "vmp_r_and_sog_r": {
+    "filename": "lpu/tracts_undirected/vmp_r_and_sog_r.swc",
+    "label": "Right SOG and Right SOG",
+    "background": true
+  },
+  "mb_r_and_al_r": {
+    "filename": "lpu/tracts_undirected/mb_r_and_al_r.swc",
+    "label": "Right MB and Right MB",
+    "background": true
+  },
+  "lh_r_and_al_r": {
+    "filename": "lpu/tracts_undirected/lh_r_and_al_r.swc",
+    "label": "Right AL and Right AL",
+    "background": true
+  },
+  "spp_r_and_al_r": {
+    "filename": "lpu/tracts_undirected/spp_r_and_al_r.swc",
+    "label": "Right AL and Right AL",
+    "background": true
+  },
+  "pan_r_and_al_r": {
+    "filename": "lpu/tracts_undirected/pan_r_and_al_r.swc",
+    "label": "Right AL and Right AL",
+    "background": true
+  },
+  "cvlp_r_and_ammc_r": {
+    "filename": "lpu/tracts_undirected/cvlp_r_and_ammc_r.swc",
+    "label": "Right CVLP and Right CVLP",
+    "background": true
+  },
+  "med_l_and_med_r": {
+    "filename": "lpu/tracts_undirected/med_l_and_med_r.swc",
+    "label": "Right MED and Right MED",
+    "background": true
+  },
+  "lop_l_and_cvlp_l": {
+    "filename": "lpu/tracts_undirected/lop_l_and_cvlp_l.swc",
+    "label": "Left CVLP and Left CVLP",
+    "background": true
+  },
+  "vmp_l_and_cvlp_l": {
+    "filename": "lpu/tracts_undirected/vmp_l_and_cvlp_l.swc",
+    "label": "Left VMP and Left VMP",
+    "background": true
+  },
+  "vmp_l_and_dmp_l": {
+    "filename": "lpu/tracts_undirected/vmp_l_and_dmp_l.swc",
+    "label": "Left VMP and Left VMP",
+    "background": true
+  },
+  "sog_l_and_sog_r": {
+    "filename": "lpu/tracts_undirected/sog_l_and_sog_r.swc",
+    "label": "Left SOG and Left SOG",
+    "background": true
+  },
+  "al_l_and_al_r": {
+    "filename": "lpu/tracts_undirected/al_l_and_al_r.swc",
+    "label": "Right AL and Right AL",
+    "background": true
+  },
+  "sdfp_l_and_eb": {
+    "filename": "lpu/tracts_undirected/sdfp_l_and_eb.swc",
+    "label": "EB and EB",
+    "background": true
+  },
+  "fb_and_idfp_l": {
+    "filename": "lpu/tracts_undirected/fb_and_idfp_l.swc",
+    "label": "Left IDFP and Left IDFP",
+    "background": true
+  },
+  "med_l_and_lob_l": {
+    "filename": "lpu/tracts_undirected/med_l_and_lob_l.swc",
+    "label": "Left LOB and Left LOB",
+    "background": true
+  },
+  "med_l_and_lop_l": {
+    "filename": "lpu/tracts_undirected/med_l_and_lop_l.swc",
+    "label": "Left LOP and Left LOP",
+    "background": true
+  },
+  "lop_l_and_lob_l": {
+    "filename": "lpu/tracts_undirected/lop_l_and_lob_l.swc",
+    "label": "Left LOB and Left LOB",
+    "background": true
+  },
+  "vlp_l_and_og_l": {
+    "filename": "lpu/tracts_undirected/vlp_l_and_og_l.swc",
+    "label": "Left VLP and Left VLP",
+    "background": true
+  },
+  "vlp_l_and_lob_l": {
+    "filename": "lpu/tracts_undirected/vlp_l_and_lob_l.swc",
+    "label": "Left VLP and Left VLP",
+    "background": true
+  },
+  "vlp_l_and_optu_l": {
+    "filename": "lpu/tracts_undirected/vlp_l_and_optu_l.swc",
+    "label": "Left VLP and Left VLP",
+    "background": true
+  },
+  "vlp_l_and_dmp_l": {
+    "filename": "lpu/tracts_undirected/vlp_l_and_dmp_l.swc",
+    "label": "Left DMP and Left DMP",
+    "background": true
+  },
+  "vlp_l_and_sdfp_l": {
+    "filename": "lpu/tracts_undirected/vlp_l_and_sdfp_l.swc",
+    "label": "Left SDFP and Left SDFP",
+    "background": true
+  },
+  "vlp_l_and_cvlp_l": {
+    "filename": "lpu/tracts_undirected/vlp_l_and_cvlp_l.swc",
+    "label": "Left VLP and Left VLP",
+    "background": true
+  },
+  "vlp_l_and_spp_l": {
+    "filename": "lpu/tracts_undirected/vlp_l_and_spp_l.swc",
+    "label": "Left VLP and Left VLP",
+    "background": true
+  },
+  "vlp_l_and_dlp_l": {
+    "filename": "lpu/tracts_undirected/vlp_l_and_dlp_l.swc",
+    "label": "Left VLP and Left VLP",
+    "background": true
+  },
+  "lob_l_and_dmp_l": {
+    "filename": "lpu/tracts_undirected/lob_l_and_dmp_l.swc",
+    "label": "Left DMP and Left DMP",
+    "background": true
+  },
+  "optu_l_and_dmp_l": {
+    "filename": "lpu/tracts_undirected/optu_l_and_dmp_l.swc",
+    "label": "Left OPTU and Left OPTU",
+    "background": true
+  },
+  "dmp_l_and_cvlp_l": {
+    "filename": "lpu/tracts_undirected/dmp_l_and_cvlp_l.swc",
+    "label": "Left DMP and Left DMP",
+    "background": true
+  },
+  "lh_l_and_dlp_l": {
+    "filename": "lpu/tracts_undirected/lh_l_and_dlp_l.swc",
+    "label": "Left DLP and Left DLP",
+    "background": true
+  },
+  "fb_and_cvlp_l": {
+    "filename": "lpu/tracts_undirected/fb_and_cvlp_l.swc",
+    "label": "Left CVLP and Left CVLP",
+    "background": true
+  },
+  "vmp_l_and_vlp_l": {
+    "filename": "lpu/tracts_undirected/vmp_l_and_vlp_l.swc",
+    "label": "Left VLP and Left VLP",
+    "background": true
+  },
+  "spp_l_and_dmp_l": {
+    "filename": "lpu/tracts_undirected/spp_l_and_dmp_l.swc",
+    "label": "Left DMP and Left DMP",
+    "background": true
+  },
+  "vmp_l_and_spp_l": {
+    "filename": "lpu/tracts_undirected/vmp_l_and_spp_l.swc",
+    "label": "Left VMP and Left VMP",
+    "background": true
+  },
+  "vlp_l_and_lh_l": {
+    "filename": "lpu/tracts_undirected/vlp_l_and_lh_l.swc",
+    "label": "Left LH and Left LH",
+    "background": true
+  },
+  "pan_l_and_dmp_l": {
+    "filename": "lpu/tracts_undirected/pan_l_and_dmp_l.swc",
+    "label": "Left DMP and Left DMP",
+    "background": true
+  },
+  "spp_l_and_pan_l": {
+    "filename": "lpu/tracts_undirected/spp_l_and_pan_l.swc",
+    "label": "Left PAN and Left PAN",
+    "background": true
+  },
+  "spp_l_and_dlp_l": {
+    "filename": "lpu/tracts_undirected/spp_l_and_dlp_l.swc",
+    "label": "Left DLP and Left DLP",
+    "background": true
+  },
+  "sdfp_l_and_dlp_l": {
+    "filename": "lpu/tracts_undirected/sdfp_l_and_dlp_l.swc",
+    "label": "Left DLP and Left DLP",
+    "background": true
+  },
+  "spp_l_and_sdfp_l": {
+    "filename": "lpu/tracts_undirected/spp_l_and_sdfp_l.swc",
+    "label": "Left SDFP and Left SDFP",
+    "background": true
+  },
+  "dmp_l_and_ccp_l": {
+    "filename": "lpu/tracts_undirected/dmp_l_and_ccp_l.swc",
+    "label": "Left CCP and Left CCP",
+    "background": true
+  },
+  "fb_and_dmp_l": {
+    "filename": "lpu/tracts_undirected/fb_and_dmp_l.swc",
+    "label": "Left DMP and Left DMP",
+    "background": true
+  },
+  "pb_and_ccp_l": {
+    "filename": "lpu/tracts_undirected/pb_and_ccp_l.swc",
+    "label": "Left CCP and Left CCP",
+    "background": true
+  },
+  "idfp_l_and_eb": {
+    "filename": "lpu/tracts_undirected/idfp_l_and_eb.swc",
+    "label": "EB and EB",
+    "background": true
+  },
+  "pb_and_idfp_l": {
+    "filename": "lpu/tracts_undirected/pb_and_idfp_l.swc",
+    "label": "PB and PB",
+    "background": true
+  },
+  "fb_and_sdfp_l": {
+    "filename": "lpu/tracts_undirected/fb_and_sdfp_l.swc",
+    "label": "FB and FB",
+    "background": true
+  },
+  "sdfp_l_and_optu_l": {
+    "filename": "lpu/tracts_undirected/sdfp_l_and_optu_l.swc",
+    "label": "Left SDFP and Left SDFP",
+    "background": true
+  },
+  "vmp_l_and_ccp_l": {
+    "filename": "lpu/tracts_undirected/vmp_l_and_ccp_l.swc",
+    "label": "Left VMP and Left VMP",
+    "background": true
+  },
+  "sog_l_and_sdfp_l": {
+    "filename": "lpu/tracts_undirected/sog_l_and_sdfp_l.swc",
+    "label": "Left SOG and Left SOG",
+    "background": true
+  },
+  "sog_l_and_dmp_l": {
+    "filename": "lpu/tracts_undirected/sog_l_and_dmp_l.swc",
+    "label": "Left SOG and Left SOG",
+    "background": true
+  },
+  "sdfp_l_and_mb_l": {
+    "filename": "lpu/tracts_undirected/sdfp_l_and_mb_l.swc",
+    "label": "Left SDFP and Left SDFP",
+    "background": true
+  },
+  "sdfp_l_and_dmp_l": {
+    "filename": "lpu/tracts_undirected/sdfp_l_and_dmp_l.swc",
+    "label": "Left SDFP and Left SDFP",
+    "background": true
+  },
+  "vlp_l_and_sog_l": {
+    "filename": "lpu/tracts_undirected/vlp_l_and_sog_l.swc",
+    "label": "Left VLP and Left VLP",
+    "background": true
+  },
+  "sdfp_l_and_lh_l": {
+    "filename": "lpu/tracts_undirected/sdfp_l_and_lh_l.swc",
+    "label": "Left SDFP and Left SDFP",
+    "background": true
+  },
+  "mb_l_and_idfp_l": {
+    "filename": "lpu/tracts_undirected/mb_l_and_idfp_l.swc",
+    "label": "Left MB and Left MB",
+    "background": true
+  },
+  "mb_l_and_eb": {
+    "filename": "lpu/tracts_undirected/mb_l_and_eb.swc",
+    "label": "Left MB and Left MB",
+    "background": true
+  },
+  "pb_and_dmp_l": {
+    "filename": "lpu/tracts_undirected/pb_and_dmp_l.swc",
+    "label": "PB and PB",
+    "background": true
+  },
+  "lh_l_and_dmp_l": {
+    "filename": "lpu/tracts_undirected/lh_l_and_dmp_l.swc",
+    "label": "Left DMP and Left DMP",
+    "background": true
+  },
+  "vmp_l_and_lh_l": {
+    "filename": "lpu/tracts_undirected/vmp_l_and_lh_l.swc",
+    "label": "Left VMP and Left VMP",
+    "background": true
+  },
+  "sog_l_and_lh_l": {
+    "filename": "lpu/tracts_undirected/sog_l_and_lh_l.swc",
+    "label": "Left SOG and Left SOG",
+    "background": true
+  },
+  "pan_l_and_lh_l": {
+    "filename": "lpu/tracts_undirected/pan_l_and_lh_l.swc",
+    "label": "Left PAN and Left PAN",
+    "background": true
+  },
+  "vmp_l_and_idfp_l": {
+    "filename": "lpu/tracts_undirected/vmp_l_and_idfp_l.swc",
+    "label": "Left IDFP and Left IDFP",
+    "background": true
+  },
+  "vmp_l_and_sog_l": {
+    "filename": "lpu/tracts_undirected/vmp_l_and_sog_l.swc",
+    "label": "Left VMP and Left VMP",
+    "background": true
+  },
+  "mb_l_and_al_l": {
+    "filename": "lpu/tracts_undirected/mb_l_and_al_l.swc",
+    "label": "Left AL and Left AL",
+    "background": true
+  },
+  "lh_l_and_al_l": {
+    "filename": "lpu/tracts_undirected/lh_l_and_al_l.swc",
+    "label": "Left LH and Left LH",
+    "background": true
+  },
+  "spp_l_and_al_l": {
+    "filename": "lpu/tracts_undirected/spp_l_and_al_l.swc",
+    "label": "Left SPP and Left SPP",
+    "background": true
+  },
+  "pan_l_and_al_l": {
+    "filename": "lpu/tracts_undirected/pan_l_and_al_l.swc",
+    "label": "Left PAN and Left PAN",
+    "background": true
+  },
+  "cvlp_l_and_ammc_l": {
+    "filename": "lpu/tracts_undirected/cvlp_l_and_ammc_l.swc",
+    "label": "Left CVLP and Left CVLP",
+    "background": true
+  },
+  "lob_l_and_lob_r": {
+    "filename": "lpu/tracts_undirected/lob_l_and_lob_r.swc",
+    "label": "Right LOB and Right LOB",
+    "background": true
+  },
+  "optu_l_and_optu_r": {
+    "filename": "lpu/tracts_undirected/optu_l_and_optu_r.swc",
+    "label": "Right OPTU and Right OPTU",
+    "background": true
+  },
+  "vlp_l_and_vlp_r": {
+    "filename": "lpu/tracts_undirected/vlp_l_and_vlp_r.swc",
+    "label": "Right VLP and Right VLP",
+    "background": true
+  },
+  "fb_and_nod_r": {
+    "filename": "lpu/tracts_undirected/fb_and_nod_r.swc",
+    "label": "FB and FB",
+    "background": true
+  },
+  "pb_and_nod_r": {
+    "filename": "lpu/tracts_undirected/pb_and_nod_r.swc",
+    "label": "PB and PB",
+    "background": true
+  },
+  "pb_and_nod_l": {
+    "filename": "lpu/tracts_undirected/pb_and_nod_l.swc",
+    "label": "PB and PB",
+    "background": true
+  },
+  "fb_and_nod_l": {
+    "filename": "lpu/tracts_undirected/fb_and_nod_l.swc",
+    "label": "FB and FB",
+    "background": true
+  },
+  "nod_r_and_dmp_r": {
+    "filename": "lpu/tracts_undirected/nod_r_and_dmp_r.swc",
+    "label": "Right NOD and Right NOD",
+    "background": true
+  },
+  "nod_l_and_dmp_l": {
+    "filename": "lpu/tracts_undirected/nod_l_and_dmp_l.swc",
+    "label": "Left NOD and Left NOD",
+    "background": true
+  },
+  "nod_r_and_idfp_r": {
+    "filename": "lpu/tracts_undirected/nod_r_and_idfp_r.swc",
+    "label": "Right NOD and Right NOD",
+    "background": true
+  },
+  "nod_l_and_idfp_l": {
+    "filename": "lpu/tracts_undirected/nod_l_and_idfp_l.swc",
+    "label": "Left IDFP and Left IDFP",
+    "background": true
+  },
+  "og_r_and_lob_r": {
+    "filename": "lpu/tracts_undirected/og_r_and_lob_r.swc",
+    "label": "Right OG and Right OG",
+    "background": true
+  },
+  "og_l_and_lob_l": {
+    "filename": "lpu/tracts_undirected/og_l_and_lob_l.swc",
+    "label": "Left OG and Left OG",
+    "background": true
+  },
+  "cvlp_l_and_cvlp_r": {
+    "filename": "lpu/tracts_undirected/cvlp_l_and_cvlp_r.swc",
+    "label": "Right CVLP and Right CVLP",
+    "background": true
+  },
+  "dmp_l_and_dmp_r": {
+    "filename": "lpu/tracts_undirected/dmp_l_and_dmp_r.swc",
+    "label": "Left DMP and Left DMP",
+    "background": true
+  },
+  "dmp_r_and_ccp_l": {
+    "filename": "lpu/tracts_undirected/dmp_r_and_ccp_l.swc",
+    "label": "Left CCP and Left CCP",
+    "background": true
+  },
+  "dmp_l_and_ccp_r": {
+    "filename": "lpu/tracts_undirected/dmp_l_and_ccp_r.swc",
+    "label": "Right CCP and Right CCP",
+    "background": true
+  },
+  "cvlp_r_and_cmp_r": {
+    "filename": "lpu/tracts_undirected/cvlp_r_and_cmp_r.swc",
+    "label": "Right CMP and Right CMP",
+    "background": true
+  },
+  "vmp_r_and_cmp_r": {
+    "filename": "lpu/tracts_undirected/vmp_r_and_cmp_r.swc",
+    "label": "Right VMP and Right VMP",
+    "background": true
+  },
+  "med_r_and_cmp_r": {
+    "filename": "lpu/tracts_undirected/med_r_and_cmp_r.swc",
+    "label": "Right CMP and Right CMP",
+    "background": true
+  },
+  "dmp_l_and_cmp_l": {
+    "filename": "lpu/tracts_undirected/dmp_l_and_cmp_l.swc",
+    "label": "Left DMP and Left DMP",
+    "background": true
+  },
+  "cvlp_l_and_cmp_l": {
+    "filename": "lpu/tracts_undirected/cvlp_l_and_cmp_l.swc",
+    "label": "Left CMP and Left CMP",
+    "background": true
+  },
+  "vmp_l_and_cmp_l": {
+    "filename": "lpu/tracts_undirected/vmp_l_and_cmp_l.swc",
+    "label": "Left VMP and Left VMP",
+    "background": true
+  },
+  "med_l_and_cmp_l": {
+    "filename": "lpu/tracts_undirected/med_l_and_cmp_l.swc",
+    "label": "Left CMP and Left CMP",
+    "background": true
+  }
+}

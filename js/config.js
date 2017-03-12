@@ -16,7 +16,7 @@ var require = {
     jquery: 'https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js',
     mmenu: 'https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/5.7.8/js/jquery.mmenu.all.min.js',
     three: 'https://cdnjs.cloudflare.com/ajax/libs/three.js/78/three',
-    TrackballControls: 'http://cdn.rawgit.com/mrdoob/three.js/dev/examples/js/controls/TrackballControls',
+    TrackballControls: 'js/TrackballControls',
     Lut: "http://cdn.rawgit.com/mrdoob/three.js/dev/examples/js/math/Lut",
     tooltip: "js/tooltip",
     FFBOMesh3D: "http://cdn.rawgit.com/fruitflybrain/ffbo.visualizer_module/master/mesh3d",

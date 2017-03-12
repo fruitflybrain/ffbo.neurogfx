@@ -16,6 +16,7 @@ var GraphicsExplorer = function(svgobj, node_selector, edge_selector) {
     this.toolTipPos = undefined;
     this.dispatch = {
         'click-node': this.toggleNode,
+        'dblckick-node': function(){}
     };
 
     this.initNode();
@@ -45,6 +46,10 @@ GraphicsExplorer.prototype.initNode = function() {
         .on('click',
             function() {
                 _this.dispatch['click-node'](d3.select(this).attr("id"));
+            })
+        .on('dblclick',
+            function() {
+                _this.dispatch['dblclick-node'](d3.select(this).attr("id"));
             })
 }
 

@@ -12,10 +12,20 @@ require( ['detector', 'FFBOMesh3D', 'resizesensor', 'd3', 'tooltip', 'graphics_e
 
     graphicsExplorer = new GraphicsExplorer(svgObj,'.lpu','.tract');
     graphicsExplorer.dispatch["click-node"] = toggleLPU;
+    graphicsExplorer.dispatch["dblclick-node"] = function(id) {
+      if (id === 'lam_r') {
+        url = "/lpu/lam_r/index.html";
+        window.location = url;
+      }
+    }
     /*
 		 * Load the 3D visualization
 		 */
 		 $.getJSON( "data/mesh.json", function( data ) {
+       for (var x in data) {
+           if (data[x]['filename'].split('.').pop() == 'json')
+               data[x]['filename'] = 'https://cdn.rawgit.com/fruitflybrain/ffbo.lib/master' + data[x]['filename'].substring(3)
+       }
 			 ffboMesh = new FFBOMesh3D(
 				 'vis-3d',
 				 {
@@ -30,12 +40,15 @@ require( ['detector', 'FFBOMesh3D', 'resizesensor', 'd3', 'tooltip', 'graphics_e
 			 );
    		ffboMesh.dispatch["click"] = toggleLPU;
 
-
 			 new ResizeSensor($("#vis-3d"), function() {
 				 ffboMesh.onWindowResize();
 			 });
 		 });
-
+     svgObj.selectAll('.lpu.lam_r')
+     .on("dblclick", function() {
+       url = "/lpu/lam_r/lamina.html";
+       window.location = url;
+     })
 		/*
 		 * Setup UI
 		 */
@@ -73,7 +86,6 @@ require( ['detector', 'FFBOMesh3D', 'resizesensor', 'd3', 'tooltip', 'graphics_e
 	          lpuState[id].selected = !lpuState[id].selected;
 				else
 				    lpuState[id].selected = isSel;
-				console.log(id);
 	      // update svg
         graphicsExplorer.toggleNode("#"+id);
 	      // update btn
