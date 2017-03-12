@@ -4,7 +4,6 @@ var require = {
     'three': { exports: 'THREE' },
     'TrackballControls': { deps: ['three'], exports: 'TrackballControls' },
     'Lut': { deps: ['three'], exports: 'Lut' },
-    'tooltip': { exports: 'ToolTip' },
     'detector': { exports: 'Detector' },
     'resizesensor': {exports: 'ResizeSensor'},
     'FFBOMesh3D': { deps: ['three', 'Lut', 'TrackballControls', 'tooltip'], exports: 'FFBOMesh3D' },
@@ -18,7 +17,6 @@ var require = {
     three: 'https://cdnjs.cloudflare.com/ajax/libs/three.js/78/three',
     TrackballControls: 'js/TrackballControls',
     Lut: "http://cdn.rawgit.com/mrdoob/three.js/dev/examples/js/math/Lut",
-    tooltip: "js/tooltip",
     FFBOMesh3D: "http://cdn.rawgit.com/fruitflybrain/ffbo.visualizer_module/master/mesh3d",
     resizesensor: "http://cdn.rawgit.com/marcj/css-element-queries/master/src/ResizeSensor",
 
