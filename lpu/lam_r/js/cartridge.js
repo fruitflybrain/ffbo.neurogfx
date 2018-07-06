@@ -22,8 +22,7 @@ for (var i=0; i < neuList.length; i++ ) {
 }
 var ffboMesh;
 var cartridge_data_set = false;
-/*
- *
+
   $(".vis").dblclick( function() {
     if ($(this).hasClass("vis-sm")) {
       $(".vis-hf-r").toggleClass("vis-sm vis-hf-r");
@@ -32,7 +31,6 @@ var cartridge_data_set = false;
     }
   });
 
- */
 
 
 document.getElementById("svgCart").addEventListener('load', function(){
@@ -97,7 +95,7 @@ document.getElementById("svgCart").addEventListener('load', function(){
   });
   /*
    * create neuron 3D mesh
-  ffboMesh = new FFBOMesh3D('vis-3d', {'ffbo_json':neuJson, 'colororder': 'order', 'showAfterLoadAll': true}); 
+  ffboMesh = new FFBOMesh3D('vis-3d', {'ffbo_json':neuJson, 'colororder': 'order', 'showAfterLoadAll': true});
   ffboMesh.dispatch['click'] = toggleByID;
    */
   ffboMesh = new FFBOMesh3D('vis-3d', neuJson, toggleByID);
@@ -272,6 +270,16 @@ document.getElementById("svgCart").addEventListener('load', function(){
         if ( $(this).hasClass("vis-hf-l") || $(this).hasClass("vis-sm-1") )
          $(this).toggleClass("vis-sm-1 vis-hf-l")
      })
+
+     $('.vis').hover(
+       function() {
+           if ($(this).hasClass("vis-sm"))
+               $(".vis-lg").toggleClass("vis-hf-r vis-lg");
+       }, function() {
+           if ($(this).hasClass("vis-sm"))
+               $(".vis-hf-r").toggleClass("vis-hf-r vis-lg");
+       });
+
   /*
    * mmemu functions
    */

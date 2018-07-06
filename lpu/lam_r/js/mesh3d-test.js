@@ -113,16 +113,23 @@ function FFBOMesh3D(div_id, data, func) {
 
 	this.container.addEventListener( 'mousemove', this.onDocumentMouseMove.bind(this), false );
 
-	this.container.addEventListener( 'mouseleave', this.onDocumentMouseLeave.bind(this), false );
+    this.container.addEventListener( 'mouseenter', this.onDocumentMouseEnter.bind(this), false );
+
+    this.container.addEventListener( 'mouseleave', this.onDocumentMouseLeave.bind(this), false );
 
 	this.container.addEventListener( 'resize', this.onWindowResize.bind(this), false );
+
+    this.isMouseOver = false;
 
 	//this.initTimeliner();
 
 	/* create tool tip */
 	this.toolTipPos = new THREE.Vector2();
 	this.createToolTip();
-	this.animOpacity = {};
+    this.animOpacity = {};
+        this.dispatch = {
+            'syncControls': undefined,
+        };
 };
 FFBOMesh3D.prototype.setAnim = function(data) {
 	for (var key in data) {
@@ -140,6 +147,9 @@ FFBOMesh3D.prototype.animate = function() {
 	requestAnimationFrame( this.animate.bind(this) );
 
 	this.controls.update(); // required if controls.enableDamping = true, or if controls.autoRotate = true
+
+    if( this.isMouseOver && this.dispatch.syncControls)
+           this.dispatch.syncControls(this)
 
 	this.render();
 }
@@ -299,8 +309,15 @@ FFBOMesh3D.prototype.onDocumentMouseMove = function( event ) {
 FFBOMesh3D.prototype.onDocumentMouseLeave = function( event ) {
 	event.preventDefault();
 
+    this.isMouseOver = false;
 	this.hide3dToolTip();
 
+}
+
+FFBOMesh3D.prototype.onDocumentMouseEnter = function( event ) {
+    event.preventDefault();
+
+    this.isMouseOver = true;
 }
 
 FFBOMesh3D.prototype.onWindowResize = function() {
@@ -427,4 +444,15 @@ FFBOMesh3D.prototype.show3dToolTip = function (d) {
 
 FFBOMesh3D.prototype.hide3dToolTip = function () {
 	this.toolTipDiv.style.opacity = 0.0;
+}
+
+FFBOMesh3D.prototype.syncControls = function (ffbomesh) {
+    if (this === ffbomesh)
+       return;
+
+    this.controls.target.copy( ffbomesh.controls.target );
+    this.camera.position.copy( ffbomesh.camera.position );
+    this.camera.up.copy( ffbomesh.camera.up );
+
+    this.camera.lookAt( ffbomesh.controls.target );
 }

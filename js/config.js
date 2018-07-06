@@ -17,7 +17,7 @@ var require = {
     three: 'https://cdnjs.cloudflare.com/ajax/libs/three.js/78/three',
     TrackballControls: 'js/TrackballControls',
     Lut: "https://cdn.rawgit.com/mrdoob/three.js/dev/examples/js/math/Lut",
-    FFBOMesh3D: "https://cdn.rawgit.com/fruitflybrain/ffbo.visualizer_module/master/mesh3d",
+    FFBOMesh3D: 'js/mesh3d',
     resizesensor: "https://cdn.rawgit.com/marcj/css-element-queries/master/src/ResizeSensor",
 
     detector: 'https://cdn.rawgit.com/mrdoob/three.js/dev/examples/js/Detector',
