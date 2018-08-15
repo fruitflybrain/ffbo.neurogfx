@@ -425,7 +425,7 @@ function create_duplicate_state(server, session, query){
 
 // process query result for a cartridge
 function process_na_result_in_nx_format(res) {
-    cartridge_graph = res["success"]["result"];
+    cartridge_graph = res["success"]["result"]["data"];
     var nodes = cartridge_graph["nodes"];
     var edges = cartridge_graph["edges"];
     // maps from unique labels -> key and name of the neuron.
