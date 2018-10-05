@@ -1,5 +1,5 @@
 
-require( ['WEBGL', 'FFBOMesh3D', 'resizesensor', 'd3', 'graphics_explorer'],
+require( ['WebGL', 'FFBOMesh3D', 'resizesensor', 'd3', 'graphics_explorer'],
          function ( WEBGL, FFBOMesh3D, ResizeSensor, d3, GraphicsExplorer ) {
 	if ( ! WEBGL.isWebGLAvailable ) {
 		WEBGL.getWebGLErrorMessage();
