@@ -4,7 +4,7 @@ var require = {
     'three': { exports: 'THREE' },
     'TrackballControls': { deps: ['three'], exports: 'TrackballControls' },
     'Lut': { deps: ['three'], exports: 'Lut' },
-    'detector': { exports: 'Detector' },
+    'WebGL': { exports: 'WEBGL' },
     'resizesensor': {exports: 'ResizeSensor'},
     'FFBOMesh3D': { deps: ['three', 'Lut', 'TrackballControls'], exports: 'FFBOMesh3D' },
     'd3': {exports: 'd3'},
@@ -20,7 +20,7 @@ var require = {
     FFBOMesh3D: 'js/mesh3d',
     resizesensor: "https://cdn.rawgit.com/marcj/css-element-queries/master/src/ResizeSensor",
 
-    detector: 'https://cdn.rawgit.com/mrdoob/three.js/dev/examples/js/Detector',
+    WebGL: 'https://cdn.rawgit.com/mrdoob/three.js/dev/examples/js/WebGL',
     d3: 'https://d3js.org/d3.v3.min',
     graphics_explorer: 'js/graphics_explorer',
   }

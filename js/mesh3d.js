@@ -3,7 +3,7 @@ function getRandomIntInclusive(min, max) {
 	max = Math.floor(max);
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
+if ( ! WEBGL.isWebGLAvailable ) WEBGL.getWebGLErrorMessage(); 
 
 function FFBOMesh3D(div_id, data, metadata) {
 
@@ -322,7 +322,7 @@ FFBOMesh3D.prototype.animate = function() {
 }
 FFBOMesh3D.prototype.loadMeshCallBack = function(key, visibility) {
 	return function (jsonString) {
-	        
+
 		var json = JSON.parse(jsonString);
 		var color = this.meshDict[key]['color'];
 		var geometry  = new THREE.Geometry();
@@ -692,7 +692,7 @@ FFBOMesh3D.prototype.export_state = function() {
     state_metadata['target']['z'] = this.controls.target.z;
 
     state_metadata['pin'] = Array.from(this.pinned);
-    
+
     for (var key in this.meshDict) {
 	if (this.meshDict.hasOwnProperty(key)) {
 	    state_metadata['color'][key] = this.meshDict[key].object.children[0].material.color.toArray();
@@ -703,23 +703,23 @@ FFBOMesh3D.prototype.export_state = function() {
 }
 
 FFBOMesh3D.prototype.import_state = function(state_metadata) {
-    
+
     this.camera.position.x = state_metadata['camera']['position']['x'];
     this.camera.position.y = state_metadata['camera']['position']['y'];
     this.camera.position.z = state_metadata['camera']['position']['z'];
-    
+
     this.camera.up.x = state_metadata['camera']['up']['x'];
     this.camera.up.y = state_metadata['camera']['up']['y'];
     this.camera.up.z = state_metadata['camera']['up']['z'];
-    
+
     this.controls.target.x = state_metadata['target']['x'];
     this.controls.target.y = state_metadata['target']['y'];
     this.controls.target.z = state_metadata['target']['z'];
-    
+
     this.camera.lookAt(this.controls.target);
-    
+
     this.pin(state_metadata['pin'])
-    
+
     for (var key in state_metadata['color']) {
 	if (this.meshDict.hasOwnProperty(key)) {
 	    var meshobj = this.meshDict[key].object;
@@ -730,13 +730,13 @@ FFBOMesh3D.prototype.import_state = function(state_metadata) {
 		    meshobj.children[j].geometry.colors[k].fromArray( color );
 		}
 		meshobj.children[j].geometry.colorsNeedUpdate = true;
-		
+
 	    }
 	    meshobj.visible = state_metadata['visible'][key];
 	}
     }
-    
-    
+
+
 }
 
 FFBOMesh3D.prototype.show = function(id) {
