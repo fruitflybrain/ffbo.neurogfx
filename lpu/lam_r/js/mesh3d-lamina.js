@@ -12,7 +12,7 @@ THREE.Lut.prototype.addColorMap( 'rainbow_gist', [
 [ 0.937500, '0xe800ff' ], [ 0.968750, '0xff00ea' ], [ 1.000000, '0xff00bf' ],
 ]);
 
-if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
+if ( ! WEBGL.isWebGLAvailable ) WEBGL.getWebGLErrorMessage(); 
 
 function FFBOMesh3D(div_id, data, func) {
 
@@ -240,7 +240,7 @@ FFBOMesh3D.prototype.loadSWCCallBack = function(key) {
         var geometry  = new THREE.Geometry();
         var center = {'x':0.0, 'y':0.0, 'z':0.0};
         var sphereGeometry = undefined;
-        
+
         for (var idx in swcObj ) {
             var c = swcObj[idx];
             sphereGeometry = new THREE.SphereGeometry( c.radius, 10, 10 );
@@ -249,7 +249,7 @@ FFBOMesh3D.prototype.loadSWCCallBack = function(key) {
         var group = new THREE.Object3D();
         var sphereMaterial = new THREE.MeshLambertMaterial( {color: color, transparent: false} );
         group.add(new THREE.Mesh( sphereGeometry, sphereMaterial));
-        
+
         this._registerGroup(key, group, center);
 	};
 };
@@ -469,4 +469,3 @@ FFBOMesh3D.prototype.syncControls = function (ffbomesh) {
 
 	this.camera.lookAt( ffbomesh.controls.target );
 }
-
